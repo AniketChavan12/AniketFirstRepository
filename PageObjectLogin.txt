@@ -1,0 +1,32 @@
+package com.Loginpage;
+
+import com.orangehrmbase.qa.TestBase;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class PageObjectsLogin extends TestBase {
+
+    @FindBy(xpath = "//input[@name='txtUsername']")
+    WebElement input;
+
+    @FindBy(xpath = "//input[@name='txtPassword']")
+    WebElement password;
+
+
+    public PageObjectsLogin(){
+
+        PageFactory.initElements(driver,this);
+    }
+     public void loginpass(String un,String pass){
+
+        input.sendKeys(un);
+        password.sendKeys(pass);
+
+
+     }
+
+
+
+}
